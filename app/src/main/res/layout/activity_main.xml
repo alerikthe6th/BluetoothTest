@@ -10,6 +10,22 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="vi.bluetoothtest.MainActivity">
 
+    <View
+        android:layout_width="2dp"
+        android:layout_height="match_parent"
+        android:background="#0000"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/view" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:background="#0000"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/view2" />
+
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -18,12 +34,26 @@
         android:id="@+id/tvPD"/>
 
     <Button
-        android:id="@+id/bConnectNew"
-        android:layout_width="match_parent"
+        android:id="@+id/bFindDevices"
+        android:layout_width="wrap_content"
+        android:text="Find Devices"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:text="New"
-        />
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_toEndOf="@+id/view"
+        android:layout_toRightOf="@+id/view" />
+
+    <Button
+        android:text="Toggle BlueTooth"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/bToggleBT"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_toStartOf="@+id/view"
+        android:layout_toLeftOf="@+id/view" />
 
     <ListView
         android:id="@+id/listView"
@@ -31,7 +61,28 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/tvPD"
         android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignBottom="@+id/view2"
+        android:background="@drawable/shapes" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Discovered Devices"
+        android:id="@+id/tvDD"
+        android:layout_below="@+id/view2"
+        android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
+
+    <ListView
+        android:id="@+id/deviceView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tvDD"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_above="@+id/bFindDevices"
+        android:background="@drawable/shapes"/>
 
 
 </RelativeLayout>
